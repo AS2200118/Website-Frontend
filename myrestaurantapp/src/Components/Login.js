@@ -1,4 +1,5 @@
 import React from 'react';
+import '../CSSstyle/Login.css'
 
 const Login = ({navigate}) => {
   let email = '';
