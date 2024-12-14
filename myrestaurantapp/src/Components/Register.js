@@ -1,16 +1,16 @@
 import React from 'react';
+import '../CSSstyle/Register.css';
 
 const Register = () => {
   let name = '';
   let email = '';
   let password = '';
-  let isAdmin = false;
   let message = '';
   const registerUser = () => {
     fetch('http://localhost:2000/user/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password, isAdmin }),
+      body: JSON.stringify({ name, email, password }),
     })
       .then((response) => {
         if (!response.ok) {
@@ -48,15 +48,6 @@ const Register = () => {
           onChange={(e) => (password = e.target.value)} 
           required
         />
-        <br />
-        <label>
-          <input
-            type="checkbox"
-            checked={isAdmin}
-            onChange={(e) => (isAdmin = e.target.checked)} 
-          />
-          Admin
-        </label>
         <br />
         <button type="button" onClick={registerUser}>
           Register
