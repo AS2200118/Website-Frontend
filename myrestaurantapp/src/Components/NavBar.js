@@ -12,14 +12,7 @@ function NavBar() {
     return (
         <div className="navbar">
             <div className="leftside" id={openLinks ? "open" : "close"}>
-                <img src={Logo} />
-                <div className="hiddenLinks">
-                    <Link to="/"> Home</Link>
-                    <Link to="/menu"> Menu</Link>
-                    <Link to="/reservation"> Reservation</Link>
-                    <Link to="/login"> Login</Link>
-                    <Link to="/register"> Register</Link>
-                </div>
+                <img src={Logo} alt="restaurant logo" />
             </div>
             <div className="rightside">
                 <Link to="/"> Home</Link>
@@ -31,6 +24,15 @@ function NavBar() {
                     <ReorderIcon />
                 </button>
             </div>
+            {openLinks && (
+                <div className="hiddenLinks">
+                    <Link to="/"> Home</Link>
+                    <Link to="/menu"> Menu</Link>
+                    <Link to="/reservation"> Reservation</Link>
+                    <Link to="/login"> Login</Link>
+                    <Link to="/register"> Register</Link>
+                </div>
+            )}
         </div>
     );
 }
