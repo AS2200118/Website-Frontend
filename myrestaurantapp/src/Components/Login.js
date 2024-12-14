@@ -20,8 +20,7 @@ function Login() {
       }
       const userData = await response.json();
       localStorage.setItem('userId', userData.id);
-      // Force a reload to update the navbar
-      window.location.href = '/';
+      navigate('/');
     }
     catch (error) {
       message = error.message;

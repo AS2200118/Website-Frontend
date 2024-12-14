@@ -17,7 +17,7 @@ function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('userId');
         setIsLoggedIn(false);
-        window.location.href = '/login';
+        navigate('/login'); 
     };
 
     const toggleNavBar = () => {
