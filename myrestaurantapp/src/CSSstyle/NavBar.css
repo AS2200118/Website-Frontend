@@ -16,10 +16,10 @@
 }
 
 .navbar .leftside img {
-  width: 50px;
-  height: 50px;
+  width: 180px;
+  height: 80px;
   object-fit: contain;
-  margin-right: 10px;
+  filter: brightness(1.2);
 }
 
 .navbar .rightside {
@@ -35,6 +35,7 @@
   color: white;
   text-decoration: none;
   margin: 20px;
+  font-size: 18px;
 }
 
 .navbar .rightside button {
@@ -96,9 +97,14 @@
 @media only screen and (max-width: 900px) {
   .navbar .rightside a {
     width: 70px;
+    font-size: 16px;
   }
   .navbar .leftside {
-    padding-left: 50px;
+    padding-left: 30px;
+  }
+  .navbar .leftside img {
+    width: 140px;
+    height: 70px;
   }
 }
 
@@ -118,5 +124,10 @@
   .hiddenLinks {
     display: flex;
     flex-direction: column;
+  }
+
+  .navbar .leftside img {
+    width: 120px;
+    height: 60px;
   }
 }
