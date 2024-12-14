@@ -4,6 +4,7 @@
   background-color: #121619;
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .navbar .leftside {
@@ -46,6 +47,24 @@
 
 .navbar .rightside svg {
   font-size: 30px;
+}
+
+.hiddenLinks {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  background-color: #121619;
+  width: 200px;
+  padding: 20px;
+  z-index: 999;
+}
+
+.hiddenLinks a {
+  display: block;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
 }
 
 .navbar #open {
@@ -97,6 +116,7 @@
   }
 
   .hiddenLinks {
-    display: none;
+    display: flex;
+    flex-direction: column;
   }
 }
