@@ -19,7 +19,9 @@ function Login() {
         throw new Error('Invalid credentials');
       }
       const userData = await response.json();
-      navigate("/");
+      localStorage.setItem('userId', userData.id);
+      // Force a reload to update the navbar
+      window.location.href = '/';
     }
     catch (error) {
       message = error.message;
