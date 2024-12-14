@@ -1,10 +1,21 @@
 import React, { useState, useEffect } from 'react';
+import '../CSSstyle/Menu.css';
+import LemonJuice from '../Images/LemonJuice.jpg';
+import IcedTea from '../Images/IcedTea.jpg';
+import Shawarma from '../Images/Shawarma.jpg';
 
 const MenuList = () => {
   const [menuItems, setMenuItems] = useState([]);
 
+  const getItemImage = (itemName, index) => {
+    console.log('Item name:', itemName, 'Index:', index);
+    if (index < 5) return LemonJuice;
+    if (index === 5) return IcedTea;
+    if (index === 6) return Shawarma;
+    return LemonJuice;
+  };
+
   const getAllMenuItems = () => {
-    // Adding restaurantID=1 as a query parameter
     fetch('http://localhost:2000/restaurant/menu?restaurantID=1')
       .then((response) => {
         if (response.ok) {
@@ -15,6 +26,7 @@ const MenuList = () => {
         }
       })
       .then((data) => {
+        console.log('Menu items:', data);
         setMenuItems(data);
       })
       .catch((error) => {
@@ -28,15 +40,20 @@ const MenuList = () => {
 
   return (
     <div className="form-section">
-      <h3>View Menu Items</h3>
-      <button onClick={getAllMenuItems}>Get Menu</button>
-      <ul>
-        {menuItems.map((item) => (
-          <li key={item.NAME}>
-            {item.NAME} - {item.DESCRIPTION} (${item.PRICE}) - Category: {item.CATEGORY}
-          </li>
+      <h3>Our Menu</h3>
+      <div className="menuList">
+        {menuItems.map((item, index) => (
+          <div key={item.NAME} className="menuItem">
+            <div className="menuImage" style={{ backgroundImage: `url(${getItemImage(item.NAME, index)})` }}></div>
+            <div className="content">
+              <h4>{item.NAME}</h4>
+              <p className="description">{item.DESCRIPTION}</p>
+              <p className="price">{item.PRICE}</p>
+              <p className="category">Category: {item.CATEGORY}</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
