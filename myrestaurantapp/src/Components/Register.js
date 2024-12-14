@@ -1,12 +1,12 @@
 import React from 'react';
 
-const RegistrationForm = () => {
+const Register = () => {
   let name = '';
   let email = '';
   let password = '';
   let isAdmin = false;
   let message = '';
-  const Register = () => {
+  const registerUser = () => {
     fetch('http://localhost:2000/user/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
