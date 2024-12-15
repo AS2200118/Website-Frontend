@@ -7,6 +7,7 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 import MenuList from "./Components/MenuList"; 
 import ReservationForm from "./Components/ReservationForm";
+import Review from "./Components/Review";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/menu" element={<MenuList />} />
           <Route path="/reservation" element={<ReservationForm />} />
+          <Route path="/review" element={<Review />} />
         </Routes>
         <Footer />
       </Router>

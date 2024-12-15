@@ -17,7 +17,7 @@ function Navbar() {
     const handleLogout = () => {
         localStorage.removeItem('userId');
         setIsLoggedIn(false);
-        navigate('/login'); 
+        navigate('/login');
     };
 
     const toggleNavBar = () => {
@@ -32,6 +32,7 @@ function Navbar() {
                     <Link to="/"> Home</Link>
                     <Link to="/menu"> Menu</Link>
                     <Link to="/reservation"> Reservation</Link>
+                    <Link to="/review"> Review</Link>
                     {isLoggedIn ? (
                         <>
                             <span className="user-status">Logged In</span>
@@ -49,6 +50,7 @@ function Navbar() {
                 <Link to="/"> Home</Link>
                 <Link to="/menu"> Menu</Link>
                 <Link to="/reservation"> Reservation</Link>
+                <Link to="/review"> Review</Link>
                 {isLoggedIn ? (
                     <>
                         <span className="user-status">Logged In</span>

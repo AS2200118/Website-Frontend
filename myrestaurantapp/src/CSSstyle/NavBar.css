@@ -4,26 +4,23 @@
   background-color: #121619;
   display: flex;
   flex-direction: row;
-  position: relative;
-}
-
-.navbar .leftside {
-  flex: 30%;
-  height: 100%;
-  display: flex;
-  align-items: center;
   padding-left: 50px;
 }
 
+.navbar .leftside {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+
 .navbar .leftside img {
-  width: 180px;
-  height: 80px;
-  object-fit: contain;
-  filter: brightness(1.2);
+  width: 70px;
 }
 
 .navbar .rightside {
-  flex: 70%;
+  flex: 50%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -35,7 +32,6 @@
   color: white;
   text-decoration: none;
   margin: 20px;
-  font-size: 18px;
 }
 
 .navbar .rightside button {
@@ -47,7 +43,7 @@
 }
 
 .navbar .rightside svg {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .hiddenLinks {
@@ -77,40 +73,35 @@
 }
 
 .navbar #close img {
-  display: inherit;
+  display: block;
 }
 
 .navbar #open .hiddenLinks {
-  display: inherit;
-  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar #close .hiddenLinks {
   display: none;
 }
 
-.navbar #open a {
-  width: 70px;
-  margin: 5px;
+.navbar .hiddenLinks a,
+.navbar .hiddenLinks span {
+  margin: 10px;
+  font-size: 18px;
 }
 
-.user-status {
+.navbar .user-status {
   color: #4CAF50;
-  margin-right: 15px;
-  font-weight: bold;
-  display: inline-block;
-  padding: 10px;
+  margin: 20px;
 }
 
-.logout-link {
-  color: #f44336 !important;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
+.navbar .logout-link {
+  color: #f44336;
 }
 
 .logout-link:hover {
-  color: #d32f2f !important;
+  color: #d32f2f;
 }
 
 .hiddenLinks .user-status,
@@ -138,38 +129,33 @@
 
 @media only screen and (max-width: 900px) {
   .navbar .rightside a {
-    width: 70px;
-    font-size: 16px;
-  }
-  .navbar .leftside {
-    padding-left: 30px;
-  }
-  .navbar .leftside img {
-    width: 140px;
-    height: 70px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .navbar .rightside a {
     display: none;
   }
 
-  .navbar .rightside {
-    justify-content: flex-end;
+  .navbar .rightside button {
+    display: block;
   }
 
+  .navbar .rightside #open {
+    padding-left: 0px;
+  }
+
+  .navbar .leftside {
+    padding-left: 0px;
+  }
+
+  .navbar .rightside .user-status,
+  .navbar .rightside .logout-link {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 901px) {
   .navbar .rightside button {
-    display: inherit;
+    display: none;
   }
 
   .hiddenLinks {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .navbar .leftside img {
-    width: 120px;
-    height: 60px;
+    display: none;
   }
 }
