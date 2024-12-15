@@ -1,0 +1,161 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: #121619;
+  display: flex;
+  flex-direction: row;
+  padding-left: 50px;
+}
+
+.navbar .leftside {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 150px;
+}
+
+.navbar .leftside img {
+  width: 70px;
+}
+
+.navbar .rightside {
+  flex: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 50px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+}
+
+.navbar .rightside button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.navbar .rightside svg {
+  font-size: 40px;
+}
+
+.hiddenLinks {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 0;
+  background-color: #121619;
+  width: 200px;
+  padding: 20px;
+  z-index: 999;
+}
+
+.hiddenLinks a {
+  display: block;
+  margin: 10px 0;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar #open {
+  padding-left: 0px;
+}
+
+.navbar #open img {
+  display: none;
+}
+
+.navbar #close img {
+  display: block;
+}
+
+.navbar #open .hiddenLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar #close .hiddenLinks {
+  display: none;
+}
+
+.navbar .hiddenLinks a,
+.navbar .hiddenLinks span {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.navbar .user-status {
+  color: #4CAF50;
+  margin: 20px;
+}
+
+.navbar .logout-link {
+  color: #f44336;
+}
+
+.logout-link:hover {
+  color: #d32f2f;
+}
+
+.hiddenLinks .user-status,
+.hiddenLinks .logout-link {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.logout-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d32f2f;
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar .rightside a {
+    display: none;
+  }
+
+  .navbar .rightside button {
+    display: block;
+  }
+
+  .navbar .rightside #open {
+    padding-left: 0px;
+  }
+
+  .navbar .leftside {
+    padding-left: 0px;
+  }
+
+  .navbar .rightside .user-status,
+  .navbar .rightside .logout-link {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .navbar .rightside button {
+    display: none;
+  }
+
+  .hiddenLinks {
+    display: none;
+  }
+}
